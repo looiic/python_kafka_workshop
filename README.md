@@ -1,4 +1,4 @@
-# python_kafka_workshop
+# Python Kafka Workshop
 
 ## Prerequisites
 
