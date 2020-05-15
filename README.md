@@ -31,3 +31,6 @@ docker exec -ti jupyter bash
 ```
 pip install confluent-kafka
 ```
+
+### Add Avro Schema Registry
+Open Schema Registry on Port 28102 and create a new schema ```sensor-raw-value```.
