@@ -30,6 +30,7 @@ docker exec -ti jupyter bash
 
 ```
 pip install confluent-kafka
+pip install confluent-kafka[avro]
 ```
 
 ### Add Avro Schema Registry
