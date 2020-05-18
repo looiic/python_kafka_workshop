@@ -4,7 +4,7 @@
 
 ### Set PUBLIC_IP (Docker-Compose on Windows only)
 ```
-set PUBLIC_IP=127.0.01
+set PUBLIC_IP=127.0.0.1
 ```
 
 ### Create Topic(s) on Kafka Broker
@@ -30,6 +30,7 @@ docker exec -ti jupyter bash
 
 ```
 pip install confluent-kafka
+pip install confluent-kafka[avro]
 ```
 
 ### Add Avro Schema Registry
