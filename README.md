@@ -10,6 +10,7 @@ set PUBLIC_IP=127.0.0.1
 ### Create Topic(s) on Kafka Broker
 Create the following topics:
 - sensor-raw
+- raw
 
 ```
 docker exec -ti kafka-1 bash
@@ -20,6 +21,13 @@ kafka-topics --create \
 			--if-not-exists \
 			--zookeeper zookeeper-1:2181 \
 			--topic sensor-raw \
+			--partitions 1 \
+			--replication-factor 3
+
+kafka-topics --create \
+			--if-not-exists \
+			--zookeeper zookeeper-1:2181 \
+			--topic sensor \
 			--partitions 1 \
 			--replication-factor 3
 ```
