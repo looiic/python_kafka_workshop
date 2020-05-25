@@ -51,5 +51,7 @@ Import the following .ipynb files into your Jupyter notebook on Port 28888 and r
 - Consumer.ipynb
 - Ampel.ipynb
 
+Then create a folder images and copy the 4 "ampel" images into this folder
+
 ### Set up StreamSets
 Import the File ```DeduplicateSensorRawData.json``` into your Streamsets on localhost:18630 and start the service
