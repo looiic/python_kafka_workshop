@@ -5,7 +5,7 @@
     "pipelineId" : "CleanSenso911580a3-3b18-48d3-924d-704feefc4a4c",
     "title" : "DeduplicateSensorRawData",
     "description" : "",
-    "uuid" : "7a4aa925-c73c-436b-abd4-263caa08b852",
+    "uuid" : "1e0f06b2-2021-440f-96e3-4f7e0e26ec50",
     "configuration" : [ {
       "name" : "executionMode",
       "value" : "STANDALONE"
@@ -570,7 +570,7 @@
         "value" : "streamsetsDataCollector"
       }, {
         "name" : "kafkaConfigBean.topic",
-        "value" : "sensor-raw"
+        "value" : "pm10-raw"
       }, {
         "name" : "kafkaConfigBean.produceSingleRecordPerMessage",
         "value" : false
@@ -615,7 +615,7 @@
         "value" : "TO_ERROR"
       } ],
       "uiInfo" : {
-        "yPos" : 50,
+        "yPos" : 87,
         "stageType" : "SOURCE",
         "rawSource" : {
           "configuration" : [ {
@@ -638,7 +638,7 @@
         "icon" : "kafka.png",
         "description" : "",
         "label" : "Kafka Consumer 1",
-        "xPos" : 60
+        "xPos" : 64
       },
       "inputLanes" : [ ],
       "outputLanes" : [ "KafkaConsumer_01OutputLane15897943031590" ],
@@ -657,10 +657,10 @@
         "value" : 0
       }, {
         "name" : "compareFields",
-        "value" : "ALL_FIELDS"
+        "value" : "SPECIFIED_FIELDS"
       }, {
         "name" : "fieldsToCompare",
-        "value" : [ ]
+        "value" : [ "/value" ]
       }, {
         "name" : "stageRequiredFields",
         "value" : [ ]
@@ -670,12 +670,12 @@
       } ],
       "uiInfo" : {
         "outputStreamLabels" : [ "Unique Records", "Duplicate Records" ],
-        "yPos" : 91,
+        "yPos" : 87,
         "stageType" : "PROCESSOR",
         "icon" : "dedup.png",
         "description" : "",
         "label" : "Record Deduplicator 1",
-        "xPos" : 471
+        "xPos" : 484
       },
       "inputLanes" : [ "KafkaConsumer_01OutputLane15897943031590" ],
       "outputLanes" : [ "RecordDeduplicator_01OutputLane15897950502060", "RecordDeduplicator_01OutputLane15897950502061" ],
@@ -817,7 +817,7 @@
         "value" : "*"
       }, {
         "name" : "conf.topic",
-        "value" : "sensor"
+        "value" : "pm10"
       }, {
         "name" : "conf.partitionStrategy",
         "value" : "ROUND_ROBIN"
@@ -859,7 +859,7 @@
         "value" : [ ]
       } ],
       "uiInfo" : {
-        "yPos" : 49,
+        "yPos" : 48,
         "stageType" : "TARGET",
         "icon" : "kafka.png",
         "description" : "",
@@ -877,12 +877,12 @@
       "stageVersion" : "1",
       "configuration" : [ ],
       "uiInfo" : {
-        "yPos" : 177,
+        "yPos" : 176,
         "stageType" : "TARGET",
         "icon" : "trash.png",
         "description" : "",
         "label" : "Trash 1",
-        "xPos" : 918
+        "xPos" : 922
       },
       "inputLanes" : [ "RecordDeduplicator_01OutputLane15897950502061" ],
       "outputLanes" : [ ],
@@ -913,11 +913,11 @@
       "title" : "DeduplicateSensorRawData",
       "description" : "",
       "created" : 1589794266746,
-      "lastModified" : 1589795303356,
+      "lastModified" : 1590390018418,
       "creator" : "admin",
       "lastModifier" : "admin",
       "lastRev" : "0",
-      "uuid" : "7a4aa925-c73c-436b-abd4-263caa08b852",
+      "uuid" : "1e0f06b2-2021-440f-96e3-4f7e0e26ec50",
       "valid" : true,
       "metadata" : {
         "labels" : [ ]
